@@ -335,36 +335,36 @@ def Add():
     # Back Button
     tk.Button(master=Add_Frame, text="Back", width=10, command=Run).grid(row=1, column=1)
 
-    # Date Input Entry
-    tk.Label(master=Add_Frame, text="Date:").grid(row=2, column=1)
-    Date_Entry = tk.Entry(master=Add_Frame)
-    Date_Entry.grid(row=2, column=2)
-
-    # This will appear later
-    Date_Label = tk.Label(master=Add_Frame, text=strftime("%m/%d/%Y"))
+    # Name Input Entry
+    tk.Label(master=Add_Frame, text="Name:").grid(row=2, column=1)
+    Name_Entry = tk.Entry(master=Add_Frame)
+    Name_Entry.grid(row=2, column=2)
 
     # Today set function to Change the Date_Entry
     def Today_set():
         Date_Entry.grid_forget()
-        Date_Label.grid(row=2, column=2)
+        Date_Label.grid(row=3, column=2)
         Today_Button["text"] = "Edit"
         Today_Button["command"] = Edit_set
 
     # Edit Date function to bring back the Date_Entry
     def Edit_set():
         Date_Label.grid_forget()
-        Date_Entry.grid(row=2, column=2)
+        Date_Entry.grid(row=3, column=2)
         Today_Button["text"] = "Today"
         Today_Button["command"] = Today_set
 
     # Today's Date Input Button
     Today_Button = tk.Button(master=Add_Frame, text="Today", command=Today_set)
-    Today_Button.grid(row=2, column=3, padx=(5, 0))
+    Today_Button.grid(row=3, column=3, padx=(5, 0))
 
-    # Name Input Entry
-    tk.Label(master=Add_Frame, text="Name:").grid(row=3, column=1)
-    Name_Entry = tk.Entry(master=Add_Frame)
-    Name_Entry.grid(row=3, column=2)
+    # Date Input Entry
+    tk.Label(master=Add_Frame, text="Date:").grid(row=3, column=1)
+    Date_Entry = tk.Entry(master=Add_Frame)
+    Date_Entry.grid(row=3, column=2)
+
+    # This will appear later
+    Date_Label = tk.Label(master=Add_Frame, text=strftime("%m/%d/%Y"))
 
     # Submit function
     def Submit():
